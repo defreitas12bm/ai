@@ -1,0 +1,1486 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NOXAR — IA, Automação e Escala para Empresas Ambiciosas</title>
+  <meta
+    name="description"
+    content="A NOXAR constrói sistemas com IA, automação e infraestrutura digital para empresas que querem escalar com margem, velocidade e previsibilidade."
+  />
+  <meta name="theme-color" content="#08101f" />
+
+  <style>
+    :root{
+      --bg:#050814;
+      --bg-2:#09101f;
+      --card:#0f172a;
+      --card-2:#111c33;
+      --line:rgba(255,255,255,.08);
+      --text:#f7f9ff;
+      --muted:#a7b3d4;
+      --primary:#6c8cff;
+      --primary-2:#2ce5c0;
+      --danger:#ff6b81;
+      --shadow:0 24px 70px rgba(0,0,0,.45);
+      --radius:22px;
+      --max:1180px;
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(108,140,255,.18), transparent 30%),
+        radial-gradient(circle at top right, rgba(44,229,192,.10), transparent 28%),
+        linear-gradient(180deg, #040711 0%, #08101f 100%);
+      color:var(--text);
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    .container{
+      width:min(92%, var(--max));
+      margin:0 auto;
+    }
+
+    .section{
+      padding:84px 0;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:8px 14px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:rgba(255,255,255,.04);
+      color:#dce5ff;
+      font-size:.92rem;
+      font-weight:700;
+      margin-bottom:18px;
+    }
+
+    .eyebrow-dot{
+      width:10px;
+      height:10px;
+      border-radius:999px;
+      background:linear-gradient(135deg, var(--primary), var(--primary-2));
+      box-shadow:0 0 16px rgba(44,229,192,.85);
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      border:none;
+      cursor:pointer;
+      padding:14px 22px;
+      border-radius:14px;
+      font-weight:800;
+      transition:.25s ease;
+      font-size:.98rem;
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg, var(--primary), #4e69ff);
+      color:#fff;
+      box-shadow:0 12px 30px rgba(108,140,255,.32);
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-2px);
+      box-shadow:0 18px 36px rgba(108,140,255,.4);
+    }
+
+    .btn-secondary{
+      color:#fff;
+      background:rgba(255,255,255,.04);
+      border:1px solid var(--line);
+      backdrop-filter:blur(8px);
+    }
+
+    .btn-secondary:hover{
+      background:rgba(255,255,255,.07);
+      transform:translateY(-2px);
+    }
+
+    .btn-whatsapp{
+      background:linear-gradient(135deg, #16c55f, #0aa84f);
+      color:#fff;
+      box-shadow:0 12px 30px rgba(22,197,95,.25);
+    }
+
+    .btn-whatsapp:hover{
+      transform:translateY(-2px);
+      box-shadow:0 18px 36px rgba(22,197,95,.35);
+    }
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:100;
+      backdrop-filter:blur(14px);
+      background:rgba(5,8,20,.72);
+      border-bottom:1px solid rgba(255,255,255,.05);
+    }
+
+    .nav{
+      min-height:80px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      font-weight:900;
+      letter-spacing:.2px;
+    }
+
+    .logo{
+      width:44px;
+      height:44px;
+      border-radius:14px;
+      background:
+        linear-gradient(135deg, rgba(108,140,255,.22), rgba(44,229,192,.18)),
+        #0d1730;
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow:0 10px 30px rgba(0,0,0,.35);
+      display:grid;
+      place-items:center;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .logo::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(135deg, transparent 0 40%, rgba(255,255,255,.09) 50%, transparent 60% 100%);
+      opacity:.7;
+    }
+
+    .logo span{
+      position:relative;
+      font-size:1rem;
+      font-weight:900;
+      color:#fff;
+    }
+
+    .brand-text{
+      display:flex;
+      flex-direction:column;
+      line-height:1.05;
+    }
+
+    .brand-text strong{
+      font-size:1rem;
+    }
+
+    .brand-text small{
+      color:var(--muted);
+      font-size:.72rem;
+      font-weight:700;
+      letter-spacing:.3px;
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:24px;
+      font-weight:700;
+      color:var(--muted);
+    }
+
+    .nav-links a:hover{
+      color:#fff;
+    }
+
+    .nav-actions{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .menu-btn{
+      display:none;
+      background:none;
+      border:none;
+      color:#fff;
+      font-size:1.8rem;
+      cursor:pointer;
+    }
+
+    .hero{
+      padding:86px 0 64px;
+      position:relative;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.12fr .88fr;
+      gap:36px;
+      align-items:center;
+    }
+
+    .hero h1{
+      font-size:clamp(2.4rem, 5vw, 5rem);
+      line-height:1.02;
+      letter-spacing:-2px;
+      margin-bottom:18px;
+      max-width:760px;
+    }
+
+    .gradient-text{
+      background:linear-gradient(135deg, #fff 0%, #98b0ff 45%, #69f1d8 100%);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      background-clip:text;
+      color:transparent;
+    }
+
+    .hero p{
+      max-width:650px;
+      color:var(--muted);
+      font-size:1.06rem;
+      margin-bottom:28px;
+    }
+
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-bottom:26px;
+    }
+
+    .hero-proof{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:14px;
+    }
+
+    .proof-card{
+      padding:18px;
+      border-radius:18px;
+      background:rgba(255,255,255,.04);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+    }
+
+    .proof-card h3{
+      font-size:1.65rem;
+      line-height:1;
+      margin-bottom:8px;
+    }
+
+    .proof-card p{
+      margin:0;
+      font-size:.93rem;
+      color:var(--muted);
+    }
+
+    .hero-panel{
+      border-radius:28px;
+      padding:22px;
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero-panel::after{
+      content:"";
+      position:absolute;
+      width:260px;
+      height:260px;
+      right:-60px;
+      bottom:-80px;
+      background:radial-gradient(circle, rgba(108,140,255,.3), transparent 65%);
+      pointer-events:none;
+    }
+
+    .panel-top{
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      align-items:flex-start;
+      margin-bottom:16px;
+      position:relative;
+      z-index:1;
+    }
+
+    .panel-top h3{
+      font-size:1.15rem;
+      margin-bottom:4px;
+    }
+
+    .panel-top p{
+      color:var(--muted);
+      font-size:.94rem;
+      margin:0;
+    }
+
+    .status{
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(44,229,192,.22);
+      background:rgba(44,229,192,.09);
+      color:#8ef3de;
+      font-size:.86rem;
+      font-weight:800;
+      white-space:nowrap;
+    }
+
+    .chart{
+      height:190px;
+      border-radius:18px;
+      overflow:hidden;
+      border:1px solid var(--line);
+      background:
+        linear-gradient(180deg, rgba(108,140,255,.16), transparent),
+        linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(255,255,255,.04) 1px, transparent 1px),
+        #091224;
+      background-size:auto, 42px 42px, 42px 42px, auto;
+      position:relative;
+      margin-bottom:16px;
+      z-index:1;
+    }
+
+    .chart svg{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+    }
+
+    .mini-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+      position:relative;
+      z-index:1;
+    }
+
+    .box{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:18px;
+    }
+
+    .box h4{
+      font-size:.96rem;
+      margin-bottom:8px;
+    }
+
+    .box .big{
+      font-size:1.9rem;
+      line-height:1;
+      font-weight:900;
+      letter-spacing:-1px;
+      margin-bottom:6px;
+    }
+
+    .box .sub{
+      font-size:.92rem;
+      color:var(--muted);
+    }
+
+    .section-head{
+      max-width:760px;
+      margin-bottom:34px;
+    }
+
+    .section-head h2{
+      font-size:clamp(1.9rem, 3.2vw, 3.1rem);
+      line-height:1.08;
+      letter-spacing:-1.2px;
+      margin-bottom:12px;
+    }
+
+    .section-head p{
+      color:var(--muted);
+      font-size:1.03rem;
+    }
+
+    .grid-3{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:20px;
+    }
+
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.025));
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:24px;
+      box-shadow:var(--shadow);
+    }
+
+    .card-icon{
+      width:54px;
+      height:54px;
+      border-radius:16px;
+      display:grid;
+      place-items:center;
+      font-size:1.35rem;
+      background:linear-gradient(135deg, rgba(108,140,255,.18), rgba(44,229,192,.16));
+      border:1px solid rgba(255,255,255,.08);
+      margin-bottom:16px;
+    }
+
+    .card h3{
+      font-size:1.18rem;
+      margin-bottom:10px;
+    }
+
+    .card p{
+      color:var(--muted);
+      font-size:.98rem;
+    }
+
+    .split{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:22px;
+    }
+
+    .stack{
+      display:grid;
+      gap:14px;
+    }
+
+    .feature{
+      display:flex;
+      gap:14px;
+      align-items:flex-start;
+      padding:16px;
+      border-radius:18px;
+      background:rgba(255,255,255,.03);
+      border:1px solid var(--line);
+    }
+
+    .feature-num{
+      width:42px;
+      height:42px;
+      border-radius:12px;
+      background:linear-gradient(135deg, rgba(108,140,255,.24), rgba(44,229,192,.18));
+      border:1px solid rgba(255,255,255,.08);
+      display:grid;
+      place-items:center;
+      font-size:.95rem;
+      font-weight:900;
+      flex:0 0 42px;
+    }
+
+    .feature strong{
+      display:block;
+      margin-bottom:4px;
+      font-size:1rem;
+    }
+
+    .feature span{
+      color:var(--muted);
+      font-size:.95rem;
+    }
+
+    .pricing{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:20px;
+    }
+
+    .price-card{
+      position:relative;
+      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.025));
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:28px;
+      box-shadow:var(--shadow);
+    }
+
+    .price-card.featured{
+      transform:translateY(-4px);
+      border-color:rgba(108,140,255,.5);
+      box-shadow:0 24px 80px rgba(108,140,255,.16);
+    }
+
+    .badge{
+      position:absolute;
+      top:18px;
+      right:18px;
+      padding:8px 12px;
+      border-radius:999px;
+      background:linear-gradient(135deg, var(--primary), var(--primary-2));
+      color:#07111f;
+      font-size:.8rem;
+      font-weight:900;
+    }
+
+    .price-card h3{
+      font-size:1.18rem;
+      margin-bottom:8px;
+    }
+
+    .price{
+      font-size:2.45rem;
+      line-height:1;
+      font-weight:900;
+      letter-spacing:-1px;
+      margin:10px 0 6px;
+    }
+
+    .price small{
+      font-size:1rem;
+      color:var(--muted);
+      font-weight:700;
+    }
+
+    .price-desc{
+      color:var(--muted);
+      margin-bottom:18px;
+    }
+
+    .price-card ul{
+      list-style:none;
+      display:grid;
+      gap:12px;
+      margin:22px 0;
+    }
+
+    .price-card li{
+      color:#dbe5ff;
+      font-size:.98rem;
+    }
+
+    .price-card li::before{
+      content:"✓";
+      color:var(--primary-2);
+      font-weight:900;
+      margin-right:10px;
+    }
+
+    .cta{
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      flex-wrap:wrap;
+      align-items:center;
+      padding:36px;
+      border-radius:28px;
+      border:1px solid var(--line);
+      background:
+        radial-gradient(circle at top left, rgba(108,140,255,.15), transparent 32%),
+        radial-gradient(circle at bottom right, rgba(44,229,192,.10), transparent 28%),
+        linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.025));
+      box-shadow:var(--shadow);
+    }
+
+    .cta h2{
+      font-size:clamp(1.8rem, 3vw, 2.8rem);
+      line-height:1.08;
+      margin-bottom:10px;
+      letter-spacing:-1px;
+    }
+
+    .cta p{
+      color:var(--muted);
+      max-width:760px;
+    }
+
+    .faq{
+      display:grid;
+      gap:14px;
+    }
+
+    .faq-item{
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:rgba(255,255,255,.03);
+      overflow:hidden;
+    }
+
+    .faq-question{
+      width:100%;
+      background:none;
+      border:none;
+      color:#fff;
+      text-align:left;
+      padding:18px 20px;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      font-size:1rem;
+      font-weight:800;
+    }
+
+    .faq-answer{
+      display:none;
+      padding:0 20px 18px;
+      color:var(--muted);
+    }
+
+    .faq-item.active .faq-answer{
+      display:block;
+    }
+
+    .contact{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:24px;
+    }
+
+    .contact-card{
+      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.025));
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:24px;
+      box-shadow:var(--shadow);
+    }
+
+    .contact-list{
+      display:grid;
+      gap:14px;
+      margin-top:18px;
+    }
+
+    .contact-item{
+      display:flex;
+      gap:14px;
+      align-items:flex-start;
+      padding:16px;
+      border-radius:18px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+    }
+
+    .contact-item strong{
+      display:block;
+      margin-bottom:4px;
+    }
+
+    .contact-item span{
+      color:var(--muted);
+      font-size:.95rem;
+    }
+
+    .form{
+      display:grid;
+      gap:14px;
+      margin-top:16px;
+    }
+
+    .form-row{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+
+    .form input,
+    .form textarea,
+    .form select{
+      width:100%;
+      background:#091224;
+      border:1px solid var(--line);
+      color:#fff;
+      padding:14px 16px;
+      border-radius:14px;
+      outline:none;
+      font:inherit;
+    }
+
+    .form input:focus,
+    .form textarea:focus,
+    .form select:focus{
+      border-color:rgba(108,140,255,.7);
+      box-shadow:0 0 0 4px rgba(108,140,255,.12);
+    }
+
+    .form textarea{
+      resize:vertical;
+      min-height:130px;
+    }
+
+    .form-note{
+      color:var(--muted);
+      font-size:.9rem;
+      margin-top:2px;
+    }
+
+    .form-status{
+      display:none;
+      margin-top:8px;
+      padding:12px 14px;
+      border-radius:12px;
+      font-weight:700;
+      font-size:.94rem;
+    }
+
+    .form-status.success{
+      display:block;
+      background:rgba(22,197,95,.12);
+      color:#9df0bf;
+      border:1px solid rgba(22,197,95,.2);
+    }
+
+    .form-status.error{
+      display:block;
+      background:rgba(255,107,129,.12);
+      color:#ffb8c5;
+      border:1px solid rgba(255,107,129,.2);
+    }
+
+    .socials{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:18px;
+    }
+
+    footer{
+      padding:24px 0 42px;
+      color:var(--muted);
+    }
+
+    .footer{
+      padding-top:24px;
+      border-top:1px solid rgba(255,255,255,.06);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .footer-links{
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+    }
+
+    .footer-links a:hover{
+      color:#fff;
+    }
+
+    .whatsapp-float{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      z-index:120;
+      width:60px;
+      height:60px;
+      border-radius:999px;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(135deg, #1bd267, #08a64f);
+      color:#fff;
+      box-shadow:0 18px 40px rgba(10,166,79,.35);
+      font-size:1.6rem;
+    }
+
+    .whatsapp-float:hover{
+      transform:translateY(-2px);
+    }
+
+    @media (max-width: 1024px){
+      .hero-grid,
+      .split,
+      .pricing,
+      .grid-3,
+      .contact{
+        grid-template-columns:1fr;
+      }
+
+      .hero-proof{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media (max-width: 880px){
+      .nav-links,
+      .nav-actions{
+        display:none;
+      }
+
+      .menu-btn{
+        display:block;
+      }
+
+      .mobile-menu{
+        display:none;
+        padding:0 0 18px;
+      }
+
+      .mobile-menu.active{
+        display:grid;
+        gap:10px;
+      }
+
+      .mobile-menu a{
+        padding:14px 16px;
+        border:1px solid var(--line);
+        border-radius:14px;
+        background:rgba(255,255,255,.03);
+        font-weight:700;
+      }
+    }
+
+    @media (min-width: 881px){
+      .mobile-menu{
+        display:none !important;
+      }
+    }
+
+    @media (max-width: 640px){
+      .hero{
+        padding-top:64px;
+      }
+
+      .hero h1{
+        letter-spacing:-1.4px;
+      }
+
+      .form-row{
+        grid-template-columns:1fr;
+      }
+
+      .mini-grid{
+        grid-template-columns:1fr;
+      }
+
+      .cta{
+        padding:28px;
+      }
+
+      .section{
+        padding:70px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!--
+    IMPORTANTE:
+    1) Troque o número do WhatsApp em todos os links wa.me abaixo.
+    2) Para o formulário funcionar de verdade, este arquivo já está ligado ao FormSubmit.
+    3) Você precisa trocar SEUEMAIL@EXEMPLO.COM pelo seu e-mail real nas linhas do formulário.
+  -->
+
+  <header>
+    <div class="container">
+      <div class="nav">
+        <a href="#home" class="brand" aria-label="NOXAR">
+          <div class="logo"><span>N</span></div>
+          <div class="brand-text">
+            <strong>NOXAR</strong>
+            <small>INTELIGÊNCIA OPERACIONAL</small>
+          </div>
+        </a>
+
+        <nav class="nav-links">
+          <a href="#solucoes">Soluções</a>
+          <a href="#como-funciona">Como funciona</a>
+          <a href="#planos">Planos</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contato">Contato</a>
+        </nav>
+
+        <div class="nav-actions">
+          <a
+            class="btn btn-secondary"
+            href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20quero%20entender%20como%20a%20NOXAR%20pode%20automatizar%20minha%20empresa."
+            target="_blank"
+            rel="noopener noreferrer"
+          >WhatsApp</a>
+          <a class="btn btn-primary" href="#contato">Agendar diagnóstico</a>
+        </div>
+
+        <button class="menu-btn" id="menuBtn" aria-label="Abrir menu">☰</button>
+      </div>
+
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="#solucoes">Soluções</a>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#planos">Planos</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contato">Contato</a>
+        <a
+          href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20quero%20entender%20como%20a%20NOXAR%20pode%20automatizar%20minha%20empresa."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-whatsapp"
+        >Falar no WhatsApp</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            IA, automação e sistemas para crescimento sem atrito
+          </div>
+
+          <h1>
+            Empresas comuns contratam mais gente.
+            <span class="gradient-text">Empresas ambiciosas constroem sistemas.</span>
+          </h1>
+
+          <p>
+            A NOXAR cria infraestrutura digital para empresas que querem escalar com velocidade,
+            margem e previsibilidade. Substituímos processos manuais por IA, automação e dados.
+            Menos operação. Mais controle. Mais lucro. Mais escala.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contato">Quero um diagnóstico</a>
+            <a
+              class="btn btn-whatsapp"
+              href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20quero%20uma%20apresenta%C3%A7%C3%A3o%20da%20NOXAR."
+              target="_blank"
+              rel="noopener noreferrer"
+            >Falar no WhatsApp</a>
+            <a class="btn btn-secondary" href="#solucoes">Ver soluções</a>
+          </div>
+
+          <div class="hero-proof">
+            <div class="proof-card">
+              <h3>+300%</h3>
+              <p>ganho operacional em fluxos automatizados</p>
+            </div>
+            <div class="proof-card">
+              <h3>-68%</h3>
+              <p>redução de tarefas repetitivas e gargalos</p>
+            </div>
+            <div class="proof-card">
+              <h3>24/7</h3>
+              <p>execução contínua sem pausa humana</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-panel">
+          <div class="panel-top">
+            <div>
+              <h3>Painel Executivo NOXAR</h3>
+              <p>Visão em tempo real do crescimento automatizado</p>
+            </div>
+            <span class="status">Sistema ativo</span>
+          </div>
+
+          <div class="chart">
+            <svg viewBox="0 0 600 220" preserveAspectRatio="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#6c8cff"></stop>
+                  <stop offset="100%" stop-color="#2ce5c0"></stop>
+                </linearGradient>
+              </defs>
+              <path d="M0,188 C60,175 78,130 136,134 C190,138 224,58 286,70 C346,82 378,22 432,42 C500,67 540,18 600,12 L600,220 L0,220 Z" fill="rgba(108,140,255,.18)"></path>
+              <path d="M0,188 C60,175 78,130 136,134 C190,138 224,58 286,70 C346,82 378,22 432,42 C500,67 540,18 600,12" fill="none" stroke="url(#lineGradient)" stroke-width="5" stroke-linecap="round"></path>
+            </svg>
+          </div>
+
+          <div class="mini-grid">
+            <div class="box">
+              <h4>Leads qualificados</h4>
+              <div class="big">12.480</div>
+              <div class="sub">pipeline com IA e enriquecimento automático</div>
+            </div>
+            <div class="box">
+              <h4>Conversão</h4>
+              <div class="big">18,6%</div>
+              <div class="sub">funil otimizado com automações inteligentes</div>
+            </div>
+            <div class="box">
+              <h4>Horas economizadas</h4>
+              <div class="big">1.240h</div>
+              <div class="sub">por mês em processos operacionais</div>
+            </div>
+            <div class="box">
+              <h4>ROI médio</h4>
+              <div class="big">7,4x</div>
+              <div class="sub">sobre investimento em automação</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="solucoes">
+      <div class="container">
+        <div class="section-head">
+          <h2>O que a NOXAR constrói</h2>
+          <p>
+            Não vendemos esforço manual. Construímos máquinas digitais que geram eficiência,
+            previsibilidade e vantagem competitiva.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <div class="card-icon">🤖</div>
+            <h3>Automação com IA</h3>
+            <p>
+              Atendimento, follow-up, qualificação, triagem, operação interna, análise e execução
+              contínua com agentes e fluxos inteligentes.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">📈</div>
+            <h3>Aquisição e conversão</h3>
+            <p>
+              Funis, CRM, cadência comercial, segmentação e processos de venda desenhados para
+              transformar dados em receita previsível.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">🌍</div>
+            <h3>Infraestrutura escalável</h3>
+            <p>
+              Sistemas que suportam mais clientes, mais volume e mais complexidade sem exigir
+              crescimento proporcional de equipe.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="como-funciona">
+      <div class="container split">
+        <div>
+          <div class="section-head">
+            <h2>Como transformamos operação em vantagem estrutural</h2>
+            <p>
+              Crescimento real não vem de trabalhar mais. Vem de construir um sistema que trabalha por você.
+            </p>
+          </div>
+
+          <div class="stack">
+            <div class="feature">
+              <div class="feature-num">1</div>
+              <div>
+                <strong>Mapeamento de gargalos</strong>
+                <span>Identificamos onde sua empresa perde tempo, dinheiro, margem e velocidade.</span>
+              </div>
+            </div>
+
+            <div class="feature">
+              <div class="feature-num">2</div>
+              <div>
+                <strong>Arquitetura do sistema</strong>
+                <span>Desenhamos a engrenagem ligando dados, CRM, marketing, vendas, suporte e operação.</span>
+              </div>
+            </div>
+
+            <div class="feature">
+              <div class="feature-num">3</div>
+              <div>
+                <strong>Implementação rápida</strong>
+                <span>Entramos em produção com automações, integrações, IA e dashboards executivos.</span>
+              </div>
+            </div>
+
+            <div class="feature">
+              <div class="feature-num">4</div>
+              <div>
+                <strong>Escala e otimização contínua</strong>
+                <span>O sistema melhora com uso, reduz ruído operacional e amplia a capacidade da empresa.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="display:flex; flex-direction:column; justify-content:center;">
+          <div class="section-head" style="margin-bottom:16px;">
+            <h2 style="font-size:2rem;">Sua empresa precisa de mais software, não de mais caos</h2>
+            <p>
+              A NOXAR substitui dependência operacional por infraestrutura replicável.
+            </p>
+          </div>
+
+          <div class="stack">
+            <div class="feature">
+              <div>⚡</div>
+              <div>
+                <strong>Execução em tempo real</strong>
+                <span>Fluxos rodando 24/7 sem depender de intervenção manual o tempo todo.</span>
+              </div>
+            </div>
+            <div class="feature">
+              <div>🧠</div>
+              <div>
+                <strong>Decisão orientada por dados</strong>
+                <span>Métricas claras para otimizar CAC, LTV, conversão, produtividade e margem.</span>
+              </div>
+            </div>
+            <div class="feature">
+              <div>🔒</div>
+              <div>
+                <strong>Operação com controle</strong>
+                <span>Integrações sólidas e centralização da inteligência do negócio.</span>
+              </div>
+            </div>
+            <div class="feature">
+              <div>🚀</div>
+              <div>
+                <strong>Escala sem atrito</strong>
+                <span>Mais clientes e mais receita sem multiplicar estrutura na mesma velocidade.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="planos">
+      <div class="container">
+        <div class="section-head">
+          <h2>Planos para empresas em diferentes estágios de ambição</h2>
+          <p>
+            Comece com um sistema enxuto ou entre em um projeto completo de transformação operacional.
+          </p>
+        </div>
+
+        <div class="pricing">
+          <div class="price-card">
+            <h3>Start</h3>
+            <div class="price">R$ 497 <small>/mês</small></div>
+            <p class="price-desc">Entrada para operações iniciando automação.</p>
+            <ul>
+              <li>1 fluxo automatizado</li>
+              <li>Painel básico de métricas</li>
+              <li>Integrações essenciais</li>
+              <li>Suporte por e-mail</li>
+            </ul>
+            <a class="btn btn-secondary" href="#contato" style="width:100%;">Começar</a>
+          </div>
+
+          <div class="price-card featured">
+            <div class="badge">Mais escolhido</div>
+            <h3>Growth</h3>
+            <div class="price">R$ 1.497 <small>/mês</small></div>
+            <p class="price-desc">Para empresas que querem ganho real de escala.</p>
+            <ul>
+              <li>Múltiplos fluxos automatizados</li>
+              <li>IA para atendimento e operação</li>
+              <li>Dashboard avançado</li>
+              <li>Suporte prioritário</li>
+            </ul>
+            <a class="btn btn-primary" href="#contato" style="width:100%;">Agendar diagnóstico</a>
+          </div>
+
+          <div class="price-card">
+            <h3>Scale</h3>
+            <div class="price">Sob consulta</div>
+            <p class="price-desc">Projeto sob medida para expansão agressiva.</p>
+            <ul>
+              <li>Arquitetura personalizada</li>
+              <li>IA + automação avançada</li>
+              <li>Integrações complexas</li>
+              <li>Acompanhamento estratégico</li>
+            </ul>
+            <a
+              class="btn btn-whatsapp"
+              href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20quero%20conhecer%20o%20plano%20Scale%20da%20NOXAR."
+              target="_blank"
+              rel="noopener noreferrer"
+              style="width:100%;"
+            >Falar com vendas</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta">
+          <div>
+            <h2>Pare de escalar custo. Comece a escalar capacidade.</h2>
+            <p>
+              A NOXAR transforma operação em software, software em eficiência, e eficiência em margem.
+              Esse é o jogo das empresas que dominam mercado.
+            </p>
+          </div>
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <a class="btn btn-primary" href="#contato">Solicitar proposta</a>
+            <a
+              class="btn btn-whatsapp"
+              href="https://wa.me/5511999999999?text=Quero%20falar%20com%20a%20NOXAR%20sobre%20automacao%20e%20IA."
+              target="_blank"
+              rel="noopener noreferrer"
+            >WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-head">
+          <h2>Perguntas frequentes</h2>
+          <p>As respostas que um decisor precisa antes de agir.</p>
+        </div>
+
+        <div class="faq">
+          <div class="faq-item active">
+            <button class="faq-question">
+              Quanto tempo leva para implementar?
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              Depende da complexidade da operação. Em projetos mais simples, a primeira automação pode entrar em produção em poucos dias.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              A NOXAR serve para qualquer empresa?
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              Funciona especialmente bem para empresas com processos repetitivos, operação comercial, atendimento, suporte, geração de leads e rotinas administrativas.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              Preciso ter equipe técnica interna?
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              Não. O objetivo é justamente reduzir dependência operacional e centralizar inteligência em sistemas fáceis de operar.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              O formulário já funciona?
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              Sim. Ele já está pronto para envio usando FormSubmit. Basta trocar o e-mail configurado no atributo action pelo seu e-mail real.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contato">
+      <div class="container contact">
+        <div class="contact-card">
+          <div class="section-head" style="margin-bottom:0;">
+            <h2>Solicite um diagnóstico estratégico</h2>
+            <p>
+              Preencha o formulário. A mensagem será enviada para seu e-mail via FormSubmit.
+            </p>
+          </div>
+
+          <!--
+            TROQUE O E-MAIL ABAIXO PELO SEU.
+            Exemplo:
+            action="https://formsubmit.co/seunome@gmail.com"
+          -->
+          <form
+            class="form"
+            id="leadForm"
+            action="https://formsubmit.co/SEUEMAIL@EXEMPLO.COM"
+            method="POST"
+          >
+            <input type="hidden" name="_subject" value="Novo lead no site da NOXAR">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+
+            <div class="form-row">
+              <input type="text" name="nome" placeholder="Seu nome" required>
+              <input type="text" name="empresa" placeholder="Nome da empresa" required>
+            </div>
+
+            <div class="form-row">
+              <input type="email" name="email" placeholder="Seu melhor e-mail" required>
+              <input type="tel" name="telefone" placeholder="WhatsApp / telefone" required>
+            </div>
+
+            <div class="form-row">
+              <select name="interesse" required>
+                <option value="">Qual seu foco principal?</option>
+                <option>Automação com IA</option>
+                <option>Geração de leads</option>
+                <option>Atendimento automatizado</option>
+                <option>Escala operacional</option>
+                <option>Projeto sob medida</option>
+              </select>
+
+              <select name="estagio" required>
+                <option value="">Estágio da operação</option>
+                <option>Início</option>
+                <option>Crescimento</option>
+                <option>Estruturação</option>
+                <option>Escala</option>
+              </select>
+            </div>
+
+            <textarea name="mensagem" placeholder="Descreva seu desafio principal, gargalos ou objetivo de crescimento" required></textarea>
+
+            <button type="submit" class="btn btn-primary">Enviar solicitação</button>
+            <p class="form-note">
+              Depois do primeiro envio, o FormSubmit pedirá confirmação no e-mail configurado. Isso é normal.
+            </p>
+            <div id="formStatus" class="form-status"></div>
+          </form>
+        </div>
+
+        <div class="contact-card">
+          <div class="section-head" style="margin-bottom:0;">
+            <h2>Contato direto</h2>
+            <p>
+              Para fechamento mais rápido, use WhatsApp ou troque os dados abaixo pelos seus canais reais.
+            </p>
+          </div>
+
+          <div class="contact-list">
+            <div class="contact-item">
+              <div>📧</div>
+              <div>
+                <strong>E-mail</strong>
+                <span>contato@noxar.com</span>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div>📱</div>
+              <div>
+                <strong>WhatsApp comercial</strong>
+                <span>+55 (11) 99999-9999</span>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div>🌐</div>
+              <div>
+                <strong>Website</strong>
+                <span>www.noxar.com</span>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div>🏢</div>
+              <div>
+                <strong>Atendimento</strong>
+                <span>Brasil e operação remota internacional</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="socials">
+            <a class="btn btn-secondary" href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a class="btn btn-secondary" href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a
+              class="btn btn-whatsapp"
+              href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20NOXAR."
+              target="_blank"
+              rel="noopener noreferrer"
+            >WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer">
+      <div>© 2026 NOXAR. Todos os direitos reservados.</div>
+      <div class="footer-links">
+        <a href="#home">Início</a>
+        <a href="#solucoes">Soluções</a>
+        <a href="#planos">Planos</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contato">Contato</a>
+      </div>
+    </div>
+  </footer>
+
+  <a
+    class="whatsapp-float"
+    href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20quero%20conhecer%20a%20NOXAR."
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Falar no WhatsApp"
+    title="Falar no WhatsApp"
+  >✆</a>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("active");
+    });
+
+    document.querySelectorAll(".mobile-menu a").forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.remove("active");
+      });
+    });
+
+    document.querySelectorAll(".faq-question").forEach((button) => {
+      button.addEventListener("click", () => {
+        const item = button.parentElement;
+        item.classList.toggle("active");
+      });
+    });
+
+    const leadForm = document.getElementById("leadForm");
+    const formStatus = document.getElementById("formStatus");
+
+    leadForm.addEventListener("submit", function(e) {
+      const action = leadForm.getAttribute("action") || "";
+
+      if (action.includes("SEUEMAIL@EXEMPLO.COM")) {
+        e.preventDefault();
+        formStatus.className = "form-status error";
+        formStatus.textContent = "Troque SEUEMAIL@EXEMPLO.COM pelo seu e-mail real no formulário antes de enviar.";
+        return;
+      }
+
+      formStatus.className = "form-status success";
+      formStatus.textContent = "Enviando sua solicitação...";
+    });
+  </script>
+</body>
+</html>
